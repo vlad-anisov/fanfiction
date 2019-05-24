@@ -19,7 +19,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                    .antMatchers("/signup").permitAll()
+                    .antMatchers("/signup","/black-dashboard.min.css").permitAll()
                     .anyRequest().authenticated()
                 .and()
                     .formLogin()

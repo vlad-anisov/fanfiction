@@ -1,9 +1,6 @@
 <#import "parts/common.ftl" as common>
 <@common.page>
 <h1>Main</h1>
-<form action="/logout" method="post">
-    <input type="submit" value="Sign Out"/>
-</form>
 <div>
     <form method="post">
         <input type="text" name="username" placeholder="Введите имя">

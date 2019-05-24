@@ -24,7 +24,7 @@ public class SignUpController {
 
     @PostMapping("/signup")
     public String add(User user, Model model){
-        if(checkUserAndPassword(user) && userRepository.findByUsername(user.getUsername()) != null){
+        if(checkUserAndPassword(user) || userRepository.findByUsername(user.getUsername()) != null){
             model.addAttribute("message","User exists");
             return "signup";
         }
@@ -37,11 +37,10 @@ public class SignUpController {
     }
 
     private boolean checkUserAndPassword(User user){
-        System.out.println(user.getUsername() + "qwerty" + user.getPassword());
         if(user.getUsername() == "" || user.getPassword() == "")
-            return false;
-        else
             return true;
+        else
+            return false;
     }
 
 }

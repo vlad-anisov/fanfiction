@@ -4,9 +4,4 @@
         name = user.getUsername()
         isAdmin = user.isAdmin()
     >
-    <#else>
-    <#assign name = "unknow"
-        isAdmin = false
-    >
-
 </#if>
