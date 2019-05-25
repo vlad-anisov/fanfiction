@@ -1,15 +1,28 @@
 <#import "parts/common.ftl" as common>
 <@common.page>
-<h1>Main</h1>
-<div>
-    <form method="post">
-        <input type="text" name="username" placeholder="Введите имя">
-        <button type="submit">Добавить</button>
-    </form>
+<div class="row d-flex justify-content-center">
+    <h1>Main</h1>
 </div>
-<h3>Список пользователей</h3>
-<#list users as user>
-    <b>${user.id}</b>
-    <b>${user.username}</b><br>
+<div class="row d-flex justify-content-center">
+    <div class="mb-4">
+        <form method="post">
+            <input type="text" name="text" placeholder="Введите текст">
+            <input type="text" name="tag" placeholder="Тэг">
+            <button type="submit">Добавить</button>
+        </form>
+    </div>
+</div>
+<#list fanfics as fanfic>
+    <div class="row d-flex justify-content-center">
+    <div class="card mb-4"  style="width: 18rem">
+        <div class="card-body">
+            <p class="card-text">
+                <b>${fanfic.id}</b><br>
+                <b>${fanfic.text}</b><br>
+                <b>${fanfic.tag}</b>
+            </p>
+        </div>
+    </div>
+    </div>
 </#list>
 </@common.page>
