@@ -1,46 +1,33 @@
 package com.vladandsasha.fanfiction.controller;
 
-import com.vladandsasha.fanfiction.repository.UserRepository;
-import com.vladandsasha.fanfiction.users.Role;
+import com.vladandsasha.fanfiction.service.UserService;
 import com.vladandsasha.fanfiction.users.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-
-import java.util.Collections;
 
 @Controller
 public class SignUpController {
     @Autowired
-    private UserRepository userRepository;
+    private UserService userService;
 
     @GetMapping("/signup")
-    public String signup(Model model){
-        model.addAttribute("message","");
+    public String SignUp(){
         return "signup";
     }
 
-    @PostMapping("/signup")
-    public String add(User user, Model model){
-        if(checkUserAndPassword(user) || userRepository.findByUsername(user.getUsername()) != null){
-            model.addAttribute("message","User exists");
-            return "signup";
-        }
-        else {
-            user.setActive(true);
-            user.setRole(Collections.singleton(Role.USER));
-            userRepository.save(user);
-            return "redirect:/login";
-        }
+    @GetMapping("/activate/{code}")
+    public String Activate(@PathVariable String code, Model model){
+        userService.activateUser(code, model);
+        return "login";
     }
 
-    private boolean checkUserAndPassword(User user){
-        if(user.getUsername() == "" || user.getPassword() == "")
-            return true;
-        else
-            return false;
+    @PostMapping("/signup")
+    public String Add(User user, Model model){
+        return userService.addUser(user, model);
     }
 
 }

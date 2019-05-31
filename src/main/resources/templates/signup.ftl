@@ -4,7 +4,7 @@
     <div class="row d-flex justify-content-center">
     <div class="col-sm-3">
     <h1 class="text-center">Sing up</h1>
-    ${message}
+    ${message?ifExists}
     <@login.login "/signup"/>
     </div>
 </@common.page>

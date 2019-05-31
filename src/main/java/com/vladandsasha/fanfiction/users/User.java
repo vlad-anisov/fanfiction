@@ -7,6 +7,7 @@ import javax.persistence.*;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Set;
+import java.util.UUID;
 
 @Entity
 public class User implements UserDetails {
@@ -16,6 +17,9 @@ public class User implements UserDetails {
     private String username;
     private String password;
     private boolean active;
+    private String email;
+    private String activationCode;
+    private boolean darkMode;
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
     @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
     @Enumerated(EnumType.STRING)
@@ -23,6 +27,13 @@ public class User implements UserDetails {
 
     public boolean isAdmin(){
         return role.contains(Role.ADMIN);
+    }
+
+    public boolean getAdmin(){
+        if(role.contains(Role.ADMIN))
+            return true;
+        else
+            return false;
     }
 
     public Integer getId() {
@@ -92,9 +103,36 @@ public class User implements UserDetails {
 
     public User(String username) {
         this.username = username;
+        this.darkMode = false;
+        this.role = Collections.singleton(Role.USER);
+        this.active = false;
+        this.activationCode = UUID.randomUUID().toString();
     }
 
     public User() {
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getActivationCode() {
+        return activationCode;
+    }
+
+    public void setActivationCode(String activationCode) {
+        this.activationCode = activationCode;
+    }
+
+    public boolean isDarkMode() {
+        return darkMode;
+    }
+
+    public void setDarkMode(boolean darkMode) {
+        this.darkMode = darkMode;
+    }
 }

@@ -1,3 +1,4 @@
+<#include "security.ftl">
 <#macro page>
 <!DOCTYPE html>
 <html lang="en">
@@ -7,8 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-
-    <link rel="stylesheet" href="/css/bootstrap-dark.min.css">
+    <#if darkMode?if_exists>
+        <link rel="stylesheet" href="/css/bootstrap-dark.min.css">
+        <#else>
+            <link rel="stylesheet" href="/css/bootstrap.min.css">
+    </#if>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>

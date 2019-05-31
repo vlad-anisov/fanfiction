@@ -1,9 +1,8 @@
 package com.vladandsasha.fanfiction.fanfics;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.vladandsasha.fanfiction.users.User;
+
+import javax.persistence.*;
 
 @Entity
 public class Fanfic {
@@ -14,9 +13,13 @@ public class Fanfic {
     private String text;
     private String tag;
 
-    public Fanfic(String text, String tag) {
+    @ManyToOne(fetch = FetchType.EAGER)
+    private User author;
+
+    public Fanfic(String text, String tag, User author) {
         this.text = text;
         this.tag = tag;
+        this.author = author;
     }
 
     public Fanfic(){
@@ -44,5 +47,13 @@ public class Fanfic {
 
     public void setTag(String tag) {
         this.tag = tag;
+    }
+
+    public User getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(User author) {
+        this.author = author;
     }
 }

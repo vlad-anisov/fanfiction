@@ -14,11 +14,12 @@
 </div>
 <#list fanfics as fanfic>
     <div class="row d-flex justify-content-center">
-    <div class="card mb-4"  style="width: 18rem">
+    <div class="card mb-4"  style="width: 35rem">
         <div class="card-body">
             <p class="card-text">
                 <b>${fanfic.id}</b><br>
                 <b>${fanfic.text}</b><br>
+                <b>${fanfic.author.getUsername()}</b><br>
                 <b>${fanfic.tag}</b>
             </p>
         </div>
