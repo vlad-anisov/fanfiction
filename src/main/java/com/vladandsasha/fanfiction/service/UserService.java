@@ -1,6 +1,7 @@
 package com.vladandsasha.fanfiction.service;
 
 import com.vladandsasha.fanfiction.repository.UserRepository;
+import com.vladandsasha.fanfiction.users.Role;
 import com.vladandsasha.fanfiction.users.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -8,6 +9,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
+
+import java.util.Collections;
+import java.util.UUID;
 
 @Service
 public class UserService implements UserDetailsService {
@@ -34,13 +38,17 @@ public class UserService implements UserDetailsService {
     }
 
     private void addNewUser(User user){
+        user.setDarkMode(false);
+        user.setActive(false);
+        user.setActivationCode(UUID.randomUUID().toString());
+        user.setRole(Collections.singleton(Role.USER));
         userRepository.save(user);
         sendActivateCode(user);
     }
 
     private void sendActivateCode(User user){
         String message = String.format("Hello %s! \n Welcome to Fanfiction." +
-                " Activate code https://vlad-and-sasha-fanfiction.herokuapp.com/activate/%s",user.getUsername(),user.getActivationCode());
+                " Activate code http://localhost:8080/activate/%s",user.getUsername(),user.getActivationCode());
         mailSender.send(user.getEmail(),"Activation code", message);
     }
 

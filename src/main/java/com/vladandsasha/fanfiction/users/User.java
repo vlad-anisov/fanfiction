@@ -103,10 +103,6 @@ public class User implements UserDetails {
 
     public User(String username) {
         this.username = username;
-        this.darkMode = false;
-        this.role = Collections.singleton(Role.USER);
-        this.active = false;
-        this.activationCode = UUID.randomUUID().toString();
     }
 
     public User() {
