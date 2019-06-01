@@ -48,7 +48,7 @@ public class UserService implements UserDetailsService {
 
     private void sendActivateCode(User user){
         String message = String.format("Hello %s! \n Welcome to Fanfiction." +
-                " Activate code http://localhost:8080/activate/%s",user.getUsername(),user.getActivationCode());
+                " Activate code https://vlad-and-sasha-fanfiction.herokuapp.com/activate/%s",user.getUsername(),user.getActivationCode());
         mailSender.send(user.getEmail(),"Activation code", message);
     }
 
