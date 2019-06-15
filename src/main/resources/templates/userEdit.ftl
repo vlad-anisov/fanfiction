@@ -1,9 +1,9 @@
 <#import "parts/common.ftl" as common>
 <@common.page>
-    <h1>Edit</h1>
+    <h1 class="row d-flex justify-content-center">Edit</h1>
+    <div class="container">
     <form action="/user/${user.username}/edit" method="post">
         <div class="row d-flex justify-content-center">
-            <div>${message?if_exists}</div>
         <div class="input-group mb-3" style="width: 35rem">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">Name</span>
@@ -26,4 +26,20 @@
             </div>
         </div>
     </form>
+    </div>
+    <#if message??>
+        <div class="row d-flex justify-content-center mt-5">
+            <#if message==true>
+                    <div class="alert alert-success" role="alert">
+                        All saved
+                    </div>
+            </#if>
+            <#if message==false>
+                    <div class="alert alert-danger" role="alert">
+                        User with the same name already exists
+                    </div>
+            </#if>
+        </div>
+    </#if>
+
 </@common.page>

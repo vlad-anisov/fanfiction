@@ -4,9 +4,11 @@ import com.vladandsasha.fanfiction.repository.UserRepository;
 import com.vladandsasha.fanfiction.users.Role;
 import com.vladandsasha.fanfiction.users.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
@@ -21,14 +23,20 @@ public class UserService implements UserDetailsService {
     @Autowired
     private MailSender mailSender;
 
+    @Autowired
+    PasswordEncoder passwordEncoder;
+
+    @Value("${hostname}")
+    private String hostname;
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         return userRepository.findByUsername(username);
     }
 
     public String addUser(User user, Model model){
-        if(!checkUserAndPassword(user) || userRepository.findByUsername(user.getUsername()) != null){
-            model.addAttribute("message", "User exists");
+        if(userRepository.findByUsername(user.getUsername()) != null){
+            model.addAttribute("message", false);
             return "signup";
         }
         else {
@@ -42,32 +50,26 @@ public class UserService implements UserDetailsService {
         user.setActive(false);
         user.setActivationCode(UUID.randomUUID().toString());
         user.setRole(Collections.singleton(Role.USER));
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
         userRepository.save(user);
         sendActivateCode(user);
     }
 
     private void sendActivateCode(User user){
         String message = String.format("Hello %s! \n Welcome to Fanfiction." +
-                " Activate code https://vlad-and-sasha-fanfiction.herokuapp.com/activate/%s",user.getUsername(),user.getActivationCode());
+                " Activate code %s/activate/%s",user.getUsername(), hostname, user.getActivationCode());
         mailSender.send(user.getEmail(),"Activation code", message);
-    }
-
-    private boolean checkUserAndPassword(User user){
-        if(user.getUsername() != null || user.getPassword() != null)
-            return true;
-        else
-            return false;
     }
 
     public void activateUser(String code, Model model) {
         User user = userRepository.findByActivationCode(code);
         if(user == null)
-            model.addAttribute("message","Activated code is note found");
+            model.addAttribute("message",false);
         else {
             user.setActive(true);
             user.setActivationCode(null);
             userRepository.save(user);
-            model.addAttribute("message","User successfully activated");
+            model.addAttribute("message",true);
         }
     }
 }

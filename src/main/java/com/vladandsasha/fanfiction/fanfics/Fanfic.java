@@ -1,59 +1,67 @@
 package com.vladandsasha.fanfiction.fanfics;
 
+import com.vladandsasha.fanfiction.users.Role;
 import com.vladandsasha.fanfiction.users.User;
+import lombok.Data;
+import org.hibernate.annotations.Type;
+import org.springframework.security.config.annotation.authentication.configuration.EnableGlobalAuthentication;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
+@Data
 @Entity
 public class Fanfic {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+    private String title;
+    @Type(type="text")
+    private String description;
+    private Genre genre;
+    @ElementCollection
+    private Set<String> tag;
+    private String image;
 
-    private String text;
-    private String tag;
+    @OneToMany(mappedBy = "fanfic", cascade = CascadeType.ALL)
+    private Set<Chapter> chapters;
+    //private Set<Comment> comment;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    private User author;
+    @ManyToOne
+    @JoinColumn
+    private User user;
 
-    public Fanfic(String text, String tag, User author) {
-        this.text = text;
+    public Fanfic(String title, String description, Genre genre, Set<String> tag, String image, User user) {
+        this.title = title;
+        this.description = description;
+        this.genre = genre;
         this.tag = tag;
-        this.author = author;
+        this.image = image;
+        this.user = user;
     }
 
-    public Fanfic(){
+    public Fanfic(){}
+
+    public void addChapters(Chapter chapter){
+        this.chapters = Stream.of(chapter).collect(Collectors.toSet());
+        this.chapters.forEach(x -> x.setFanfic(this));
     }
 
-    public Integer getId() {
-        return id;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Fanfic fanfic = (Fanfic) o;
+        return id.equals(fanfic.id);
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
-    }
-
-    public String getTag() {
-        return tag;
-    }
-
-    public void setTag(String tag) {
-        this.tag = tag;
-    }
-
-    public User getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(User author) {
-        this.author = author;
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }

@@ -1,14 +1,22 @@
 package com.vladandsasha.fanfiction.users;
 
+import com.vladandsasha.fanfiction.fanfics.Fanfic;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
 import java.util.Collection;
-import java.util.Collections;
+import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
-import java.util.UUID;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
+@Data
+@EqualsAndHashCode(exclude = "fanfics")
 @Entity
 public class User implements UserDetails {
     @Id
@@ -25,39 +33,14 @@ public class User implements UserDetails {
     @Enumerated(EnumType.STRING)
     private Set<Role> role;
 
-    public boolean isAdmin(){
-        return role.contains(Role.ADMIN);
-    }
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private Set<Fanfic> fanfics;
 
-    public boolean getAdmin(){
+    public boolean isAdmin(){
         if(role.contains(Role.ADMIN))
             return true;
         else
             return false;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getPassword() {
-        return password;
     }
 
     @Override
@@ -85,50 +68,11 @@ public class User implements UserDetails {
         return getRole();
     }
 
-    public boolean isActive() {
-        return active;
-    }
-
-    public void setActive(boolean active) {
-        this.active = active;
-    }
-
-    public Set<Role> getRole() {
-        return role;
-    }
-
-    public void setRole(Set<Role> role) {
-        this.role = role;
-    }
-
-    public User(String username) {
-        this.username = username;
-    }
-
     public User() {
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getActivationCode() {
-        return activationCode;
-    }
-
-    public void setActivationCode(String activationCode) {
-        this.activationCode = activationCode;
-    }
-
-    public boolean isDarkMode() {
-        return darkMode;
-    }
-
-    public void setDarkMode(boolean darkMode) {
-        this.darkMode = darkMode;
+    public void addFanfic(Fanfic fanfic){
+        this.fanfics = Stream.of(fanfic).collect(Collectors.toSet());
+        this.fanfics.forEach(x -> x.setUser(this));
     }
 }

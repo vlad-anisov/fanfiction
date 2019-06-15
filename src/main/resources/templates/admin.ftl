@@ -1,31 +1,30 @@
 <#import "parts/common.ftl" as common>
 <@common.page>
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.14.2/dist/bootstrap-table.min.css">
     <div class="row d-flex justify-content-center">
         <h1>Admin</h1>
     </div>
-    <table class="table table-hover table-borderless" >
+    <table class="table table-hover table-borderless" data-toggle="table" style="border: none">
     <thead>
     <tr>
-        <th scope="col" style="width: 8rem">ID</th>
-        <th scope="col" style="width: 8rem">Username</th>
-        <th scope="col" style="width: 8rem">Role</th>
-        <th scope="col" style="width: 8rem">Status</th>
-        <th scope="col" style="width: 8rem"></th>
+        <th scope="col" data-field="username" data-sortable="true" >Username</th>
+        <th scope="col" data-field="role" data-sortable="true">Role</th>
+        <th scope="col" data-field="status" data-sortable="true">Status</th>
+        <th scope="col" style="width: 20rem"></th>
     </tr>
     </thead>
     <tbody>
     <#list users as user>
             <tr>
-                <th scope="row">${user.id}</th>
                 <td><a class="text-primary" href="/user/${user.username}">${user.username}</a></td>
-                <td><#list user.role as role>${role}<#sep>, </#list></td>
+                <td><#list user.role as role>${role}</#list></td>
                 <td><#if user.isEnabled()>
                         Active
                     <#else>
                         Block
                     </#if></td>
                 <td>
-                    <#if !user.getAdmin()>
+                    <#if !user.isAdmin()>
                     <form method="post">
                         <input type="hidden" value="${user.id}" name="id">
                     <button formaction="/admin/assignAdmin" class="btn btn-outline-primary mr-2" style="width: 5rem" value="user.username">Admin</button>
