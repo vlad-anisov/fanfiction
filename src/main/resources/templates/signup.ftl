@@ -13,7 +13,7 @@
                 </#if>
                 <#if message==false>
                     <div class="alert alert-danger" role="alert">
-                        User with the same name already exists
+                        User with the same name or email already exists
                     </div>
                 </#if>
             </div>

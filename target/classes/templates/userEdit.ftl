@@ -1,7 +1,7 @@
 <#import "parts/common.ftl" as common>
 <@common.page>
-    <h1 class="row d-flex justify-content-center">Edit</h1>
-    <div class="container">
+    <h1 class="row d-flex justify-content-center">User Edit</h1>
+    <div class="container mt-5">
     <form action="/user/${user.username}/edit" method="post">
         <div class="row d-flex justify-content-center">
         <div class="input-group mb-3" style="width: 35rem">

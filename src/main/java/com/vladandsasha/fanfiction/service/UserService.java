@@ -5,6 +5,9 @@ import com.vladandsasha.fanfiction.users.Role;
 import com.vladandsasha.fanfiction.users.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -35,7 +38,8 @@ public class UserService implements UserDetailsService {
     }
 
     public String addUser(User user, Model model){
-        if(userRepository.findByUsername(user.getUsername()) != null){
+        if(userRepository.findByUsername(user.getUsername()) != null ||
+                userRepository.findByEmail(user.getEmail()) != null){
             model.addAttribute("message", false);
             return "signup";
         }
@@ -70,6 +74,17 @@ public class UserService implements UserDetailsService {
             user.setActivationCode(null);
             userRepository.save(user);
             model.addAttribute("message",true);
+        }
+    }
+
+    public void changeUser(String username, String newUsername, boolean darkMode, User user){
+        User userEdit = userRepository.findByUsername(username);
+        userEdit.setUsername(newUsername);
+        userEdit.setDarkMode(darkMode);
+        userRepository.save(userEdit);
+        if(user.getUsername().equals(username)) {
+            Authentication authentication = new UsernamePasswordAuthenticationToken(userEdit, userEdit.getPassword(), userEdit.getAuthorities());
+            SecurityContextHolder.getContext().setAuthentication(authentication);
         }
     }
 }

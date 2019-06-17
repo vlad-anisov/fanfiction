@@ -9,7 +9,7 @@
         <div class="row d-flex justify-content-center">
             <div class="card mb-4" style="width: 27rem">
                 <div class="card-body">
-                    <a class="text-primary" href="/fanfic/${fanfic.id}"><h5 class="mb-3">${fanfic.title}</h5></a>
+                    <a class="text-primary" href="/fanfic/${fanfic.id}"><h2 class="mb-3">${fanfic.title}</h2></a>
                     <div class="row d-flex justify-content-center">
                         <img src="${fanfic.getImage()}" class="img-fluid rounded-lg">
                     </div>

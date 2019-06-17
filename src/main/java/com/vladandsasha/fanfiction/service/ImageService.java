@@ -20,9 +20,6 @@ public class ImageService {
             Map uploadResult = cloudinaryConfig.upload(image.getBytes(), ObjectUtils.asMap("resourcetype", "auto"));
             img = uploadResult.get("url").toString();
         } catch (IOException e){
-            System.out.println("dadadad");
-            e.printStackTrace();
-            System.out.println(e);
             throw new RuntimeException();
         }
         return img;

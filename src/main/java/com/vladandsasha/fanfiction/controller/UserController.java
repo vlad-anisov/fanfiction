@@ -2,6 +2,7 @@ package com.vladandsasha.fanfiction.controller;
 
 import com.vladandsasha.fanfiction.repository.UserRepository;
 import com.vladandsasha.fanfiction.service.SecurityService;
+import com.vladandsasha.fanfiction.service.UserService;
 import com.vladandsasha.fanfiction.users.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -17,10 +18,13 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/user/{username}")
 public class UserController {
     @Autowired
-    UserRepository userRepository;
+    private UserRepository userRepository;
 
     @Autowired
     private SecurityService securityService;
+
+    @Autowired
+    private UserService userService;
 
     @GetMapping("")
     public String UserPage(@AuthenticationPrincipal User user, @PathVariable String username, Model model){
@@ -40,22 +44,16 @@ public class UserController {
     @PostMapping("save")
     @PreAuthorize("@securityService.user(principal, #username)")
     public String Save(@AuthenticationPrincipal User user,@PathVariable String username,
-                           @RequestParam String newUsername, @RequestParam(required = false) boolean  darkMode, Model model){
-        if(!userRepository.findByUsername(username).getUsername().equals(newUsername) && userRepository.findByUsername(newUsername) != null){
+                           @RequestParam String newUsername, @RequestParam(required = false) boolean  darkMode,
+                       Model model){
+        if(!userRepository.findByUsername(username).getUsername().equals(newUsername) &&
+                userRepository.findByUsername(newUsername) != null){
             model.addAttribute("message",false);
             return Edit(username,model);
         }
         else {
-            User userEdit = userRepository.findByUsername(username);
-            userEdit.setUsername(newUsername);
-            userEdit.setDarkMode(darkMode);
-            userRepository.save(userEdit);
-            if(user.getUsername().equals(username)) {
-                Authentication authentication = new UsernamePasswordAuthenticationToken(userEdit, userEdit.getPassword(), userEdit.getAuthorities());
-                SecurityContextHolder.getContext().setAuthentication(authentication);
-            }
+            userService.changeUser(username,newUsername,darkMode,user);
             model.addAttribute("message",true);
-            //return "redirect:/user/" + newUsername + "/edit";
             return Edit(newUsername,model);
         }
     }

@@ -5,7 +5,6 @@ import com.vladandsasha.fanfiction.repository.ChapterRepository;
 import com.vladandsasha.fanfiction.service.ChapterService;
 import com.vladandsasha.fanfiction.service.SecurityService;
 import com.vladandsasha.fanfiction.users.User;
-import org.checkerframework.checker.units.qual.A;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;

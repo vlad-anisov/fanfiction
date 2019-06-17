@@ -1,24 +1,16 @@
 package com.vladandsasha.fanfiction.service;
 
-import com.google.common.collect.Iterables;
 import com.vladandsasha.fanfiction.fanfics.Chapter;
 import com.vladandsasha.fanfiction.fanfics.Fanfic;
 import com.vladandsasha.fanfiction.repository.ChapterRepository;
 import com.vladandsasha.fanfiction.repository.FanficRepository;
 import com.vladandsasha.fanfiction.users.User;
-import com.vladsch.flexmark.html.HtmlRenderer;
-import com.vladsch.flexmark.parser.Parser;
-import com.vladsch.flexmark.util.ast.Node;
-import com.vladsch.flexmark.util.options.MutableDataSet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
 
 @Service
 public class ChapterService {

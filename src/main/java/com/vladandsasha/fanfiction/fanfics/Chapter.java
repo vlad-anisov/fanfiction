@@ -1,7 +1,5 @@
 package com.vladandsasha.fanfiction.fanfics;
 
-import com.google.common.base.Predicate;
-import com.vladandsasha.fanfiction.users.User;
 import com.vladsch.flexmark.html.HtmlRenderer;
 import com.vladsch.flexmark.parser.Parser;
 import com.vladsch.flexmark.util.ast.Node;

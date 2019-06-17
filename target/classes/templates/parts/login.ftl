@@ -11,6 +11,10 @@
             <label class="custom-control-label" for="customControlAutosizing">Remember me</label>
         </div>
         </#if>
+        <#if path=="/login">
         <button class="btn btn-lg btn-primary btn-block mb-3" type="submit">Sign in</button>
+        <#else>
+        <button class="btn btn-lg btn-primary btn-block mb-3" type="submit">Sing up</button>
+        </#if>
     </form>
 </#macro>

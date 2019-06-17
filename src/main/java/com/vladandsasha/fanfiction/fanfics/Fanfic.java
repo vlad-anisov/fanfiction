@@ -1,14 +1,10 @@
 package com.vladandsasha.fanfiction.fanfics;
 
-import com.vladandsasha.fanfiction.users.Role;
 import com.vladandsasha.fanfiction.users.User;
 import lombok.Data;
 import org.hibernate.annotations.Type;
-import org.springframework.security.config.annotation.authentication.configuration.EnableGlobalAuthentication;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
