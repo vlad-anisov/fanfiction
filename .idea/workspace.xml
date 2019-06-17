@@ -1,79 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b758a435-531b-4399-b3e4-8817629988df" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_3_0_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_errorprone_error_prone_annotations_2_3_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_failureaccess_1_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_28_0_jre.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_listenablefuture_9999_0_empty_to_avoid_conflict_with_guava.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_j2objc_j2objc_annotations_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_bind_jaxb_api_2_3_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_checkerframework_checker_qual_2_8_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_mojo_animal_sniffer_annotations_1_17.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_0_4_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_5_3_10_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_23_2_GA.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_jandex_2_0_5_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_5_0_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/f.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fanfiction.iml" beforeDir="false" afterPath="$PROJECT_DIR$/fanfiction.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vladandsasha/fanfiction/FanfictionApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vladandsasha/fanfiction/FanfictionApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vladandsasha/fanfiction/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vladandsasha/fanfiction/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vladandsasha/fanfiction/controller/ChapterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vladandsasha/fanfiction/controller/ChapterController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vladandsasha/fanfiction/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vladandsasha/fanfiction/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vladandsasha/fanfiction/controller/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vladandsasha/fanfiction/controller/SignUpController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vladandsasha/fanfiction/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vladandsasha/fanfiction/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vladandsasha/fanfiction/fanfics/Chapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vladandsasha/fanfiction/fanfics/Chapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vladandsasha/fanfiction/fanfics/Fanfic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vladandsasha/fanfiction/fanfics/Fanfic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vladandsasha/fanfiction/repository/ChapterRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vladandsasha/fanfiction/repository/ChapterRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vladandsasha/fanfiction/repository/FanficRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vladandsasha/fanfiction/repository/FanficRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vladandsasha/fanfiction/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vladandsasha/fanfiction/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vladandsasha/fanfiction/service/ChapterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vladandsasha/fanfiction/service/ChapterService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vladandsasha/fanfiction/service/ImageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vladandsasha/fanfiction/service/ImageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vladandsasha/fanfiction/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vladandsasha/fanfiction/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-dev.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/public/error/404.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/parts/login.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/parts/login.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/parts/navbar.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/parts/navbar.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/signup.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/signup.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userEdit.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/userEdit.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application-dev.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vladandsasha/fanfiction/FanfictionApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vladandsasha/fanfiction/config/CloudinaryConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vladandsasha/fanfiction/config/MailConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vladandsasha/fanfiction/config/WebSecurityConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vladandsasha/fanfiction/controller/AdminController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vladandsasha/fanfiction/controller/ChapterController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vladandsasha/fanfiction/controller/FanficController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vladandsasha/fanfiction/controller/MainController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vladandsasha/fanfiction/controller/SignUpController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vladandsasha/fanfiction/controller/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vladandsasha/fanfiction/fanfics/Chapter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vladandsasha/fanfiction/fanfics/Comment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vladandsasha/fanfiction/fanfics/Fanfic.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vladandsasha/fanfiction/fanfics/Genre.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vladandsasha/fanfiction/repository/ChapterRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vladandsasha/fanfiction/repository/FanficRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vladandsasha/fanfiction/repository/UserRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vladandsasha/fanfiction/service/ChapterService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vladandsasha/fanfiction/service/FanficService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vladandsasha/fanfiction/service/ImageService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vladandsasha/fanfiction/service/MailSender.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vladandsasha/fanfiction/service/SecurityService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vladandsasha/fanfiction/service/UserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vladandsasha/fanfiction/users/Role.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/vladandsasha/fanfiction/users/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/public/error/404.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/main.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/main.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/parts/login.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/parts/login.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/parts/navbar.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/parts/navbar.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/signup.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/signup.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/userEdit.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/userEdit.ftl" afterDir="false" />
-    </list>
+    <list default="true" id="b758a435-531b-4399-b3e4-8817629988df" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -146,8 +74,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fanfiction.iml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+            <state relative-caret-position="264">
+              <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -155,7 +83,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
+            <state relative-caret-position="150">
               <caret line="79" selection-start-line="79" selection-end-line="79" />
             </state>
           </provider>
@@ -404,12 +332,12 @@
       <workItem from="1560779120628" duration="82000" />
       <workItem from="1560779255782" duration="199000" />
       <workItem from="1560779503307" duration="311000" />
-      <workItem from="1560779850653" duration="51000" />
+      <workItem from="1560779850653" duration="345000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="345604000" />
+    <option name="totallyTimeSpent" value="345898000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -421,7 +349,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="55" y="-7" width="1488" height="878" extended-state="6" />
+    <frame x="55" y="-7" width="1488" height="878" extended-state="7" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.84790874" visible="true" weight="0.21288516" />
       <window_info id="Structure" order="1" sideWeight="0.15209125" side_tool="true" weight="0.19607843" />
@@ -434,7 +362,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.21179625" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.32707775" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.18498659" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3297587" />
@@ -444,7 +372,7 @@
       <window_info anchor="bottom" id="Inspection Results" order="10" weight="0.3297587" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.060321715" />
-      <window_info active="true" anchor="bottom" id="Java Enterprise" order="13" visible="true" weight="0.1152815" />
+      <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.1152815" />
       <window_info anchor="bottom" id="Database Changes" order="14" />
       <window_info anchor="bottom" id="Version Control" order="15" weight="0.4463807" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -914,14 +842,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/fanfiction.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+        <state relative-caret-position="264">
+          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
+        <state relative-caret-position="150">
           <caret line="79" selection-start-line="79" selection-end-line="79" />
         </state>
       </provider>
